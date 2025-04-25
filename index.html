@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH4XG0ZN3K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH4XG0ZN3K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-LH4XG0ZN3K');
-</script>
+      gtag('config', 'G-LH4XG0ZN3K');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cxh.pages.dev/style.css">
     <title>Crx-Shivam</title>
     <style>
-        /* Full Black Background */
         body {
             margin: 0;
             padding: 0;
@@ -27,7 +26,6 @@
             height: 100vh;
         }
 
-        /* Telegram Button Styling */
         .telegram-btn {
             display: flex;
             align-items: center;
@@ -48,7 +46,6 @@
             margin-right: 10px;
         }
 
-        /* Video Container - Slightly Smaller to Show Edges */
         .video-container {
             width: 98vw;
             height: 55.25vw;
@@ -57,9 +54,18 @@
             box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.5);
             border-radius: 20px;
             overflow: hidden;
+            position: relative;
         }
 
-        /* Join Telegram Button */
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
         .join-btn {
             background: linear-gradient(to right, #007BFF, #0044CC);
             color: white;
@@ -72,7 +78,6 @@
             box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
         }
 
-        /* Popup Style */
         .popup {
             display: none;
             position: fixed;
@@ -132,7 +137,6 @@
             border-radius: 5px;
         }
 
-        /* Clickable Telegram Link */
         .telegram-link {
             color: #4da3ff;
             font-weight: bold;
@@ -140,7 +144,6 @@
             cursor: pointer;
         }
 
-        /* Golden Glow Effect for Second Popup */
         #customPopup .popup-content {
             border: 3px solid #FFD700;
             box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
@@ -155,17 +158,18 @@
         Crx-Shivam 
     </a>
 
-    <!-- Video Player (Slightly Smaller to Show Border Edges) -->
+    <!-- Video Player (Replaced with requested iframe) -->
     <div class="video-container">
-    
-<iframe 
-    id="videoIframe"
-    src="https://user65873.hls-video.net/hls/token/a3f0c81db39d64f85b6f6a5cfaa1b2ce/stream.m3u8"
-    frameborder="0" 
-    allowfullscreen 
-    sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
-    style="width: 100%; height: 100%; border-radius: 20px;">
-</iframe>
+        <iframe 
+            id="contentFrame"
+            sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" 
+            frameborder="0" 
+            gesture="media" 
+            allow="encrypted-media" 
+            allowfullscreen="true" 
+            scrolling="no" 
+            src="https://user4587.ifrem.net/iframe/frame.php">
+        </iframe>
     </div>
 
     <!-- Join Telegram Button -->
@@ -184,19 +188,16 @@
     </div>
 
     <script>
-        // First Popup (Browser Alert)
         setTimeout(() => {
             let firstPopup = confirm("Join Our Telegram Channel Crx-Shivam");
             if (firstPopup) {
                 window.location.href = "https://t.me/+4IVZUQOhnshkN2E9";
             }
-            // Show Second Popup after the first one closes
             setTimeout(() => {
                 document.getElementById("customPopup").style.display = "flex";
             }, 500);
         }, 1000);
 
-        // Close Second Popup
         function closePopup() {
             document.getElementById("customPopup").style.display = "none";
         }
